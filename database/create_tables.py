@@ -1,22 +1,29 @@
 import db_server
 
-db_server.data_base.execute("""
-CREATE TABLE customers (
-    user_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    user_name TEXT NOT NULL,
-    first_name TEXT NOT NULL,
-    last_name TEXT NOT NULL,
-    password TEXT NOT NULL,
-    token_invalidator TEXT,
-    bio TEXT,
-    date_joined DATE,
-    last_login DATE,
-    is_active BOOLEAN,
-    role VARCHAR(50),
-    subscription_type TEXT
-)""")
+try:
+    # Create the table
+    db_server.data_base.execute("""
+    CREATE TABLE customers (
+        user_id INTEGER PRIMARY KEY AUTOINCREMENT,
+        user_name TEXT NOT NULL,
+        first_name TEXT NOT NULL,
+        last_name TEXT NOT NULL,
+        password TEXT NOT NULL,
+        token_invalidator TEXT,
+        bio TEXT,
+        date_joined DATE,
+        last_login DATE,
+        is_active BOOLEAN,
+        role VARCHAR(50),
+        subscription_type TEXT
+    )
+    """)
 
-db_server.data_base.execute("""
-ALTER TABLE customers
-ADD COLUMN profile_img TEXT
-""")
+    # Add the column to the existing table
+    db_server.data_base.execute("""
+    ALTER TABLE customers
+    ADD COLUMN profile_img TEXT
+    """)
+
+except Exception as e:
+    print(f"An error occurred: {e}")
