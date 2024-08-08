@@ -1,33 +1,17 @@
 import login, add_new_user
-import os
 
-def read_file():
-    try:
-        print(f"Current working directory: {os.getcwd()}")
-        print(f"Looking for file: {os.path.abspath('menu_options1.txt')}")
-        
-        with open("menu_options1.txt") as fileRead:
-            fr = fileRead.read()
-            print(fr)
-        return fr  
-    except FileNotFoundError as nf:
-        print(f"Check {nf}")
-
-# def read_file():
-#     try:
-#         with open("menu_options1.txt") as fileRead:
-#             fr = fileRead.read()
-#             print(fr)
-#         return fr  
-#     except FileNotFoundError as nf:
-#         print(f"Check {nf}")
-
+def menu_content():
+    return """
+Select Site Page.
+1. Login
+2. Sign Up
+"""
 
 def main_optionmenu():
     option = 0
     option_list = ["1","2"]
     
-    menu_choices = read_file()
+    menu_choices = menu_content()
     
     while option not in option_list:
         print(menu_choices)
@@ -50,3 +34,4 @@ while main_program: #While True
         case _:
             main_program = False 
 input("Press the 'Enter' key to exit the program: ")   
+
