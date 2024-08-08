@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import './TopNav.css';
 
-import './TopNav.css'; // Make sure to create this CSS file
-
-function TopNav() {
+const TopNav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -14,14 +13,12 @@ function TopNav() {
         <img src="/src/assets/Group 24.png" alt="Logo" className="logo-img" />
       </div>
       <nav className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
-        <a href="/">Home</a>
-        {/* <Link to="/" className="nav-item">Home</Link> */}
-
-        <a href="/marketplace">Marketplace</a>
-        <a href="/drop">Drop</a>
-        <a href="/design">Design</a>
-        <a href="/sell">Sell</a>
-        <a href="/plans">Plans</a>
+        <Link to="/" className="nav-item">Home</Link>
+        <Link to="/marketplace" className="nav-item">Marketplace</Link>
+        <Link to="/drop" className="nav-item">Drop</Link>
+        <Link to="/design" className="nav-item">Design</Link>
+        <Link to="/sell" className="nav-item">Sell</Link>
+        <Link to="/plans" className="nav-item">Plans</Link>
       </nav>
       <div className="menu-toggle" onClick={toggleMenu}>
         ☰

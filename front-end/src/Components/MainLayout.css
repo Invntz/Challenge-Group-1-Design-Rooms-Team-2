@@ -1,0 +1,29 @@
+
+.main-layout {
+    display: flex;
+    height: 100vh;
+    width: 100vw !important;
+  }
+  
+  .main-content {
+    /* flex-grow: 1; */
+    width:calc(100% - 80px);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .top-nav {
+    height: 60px; /* Adjust height as needed */
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+  }
+  
+  .content-wrapper {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #f0f0f0;
+    overflow-y: auto;
+  }
