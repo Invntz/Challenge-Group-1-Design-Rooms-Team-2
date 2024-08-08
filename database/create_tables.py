@@ -1,7 +1,7 @@
 import db_server
 
 db_server.data_base.execute("""
-CREATE TABLE tblfilms (
+CREATE TABLE customers (
     user_id INTEGER PRIMARY KEY AUTOINCREMENT,
     user_name TEXT NOT NULL,
     first_name TEXT NOT NULL,
@@ -15,3 +15,4 @@ CREATE TABLE tblfilms (
     role VARCHAR(50),
     subscription_type TEXT
 )""")
+

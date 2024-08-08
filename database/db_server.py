@@ -1,7 +1,7 @@
 import sqlite3 as sql
 
 try:
-    with sql.connect("FilmFlix.db") as data_base:
+    with sql.connect("invntz.db") as data_base:
         admin = data_base.cursor()
 
 except sql.OperationalError as e:
