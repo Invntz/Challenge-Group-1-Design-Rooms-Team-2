@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# this is the Sign Up page
-=======
->>>>>>> 40d2b029160a7ad990a02ccc02edf94a4b6601a4
 import db_server
 
 data_base = db_server.data_base
