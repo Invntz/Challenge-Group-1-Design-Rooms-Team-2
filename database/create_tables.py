@@ -3,15 +3,15 @@ import db_server
 db_server.data_base.execute("""
 CREATE TABLE tblfilms (
     user_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    user_name TEXT,
-    first TEXT,
-    last_name TEXT,
-    password INT,
+    user_name TEXT NOT NULL,
+    first_name TEXT NOT NULL,
+    last_name TEXT NOT NULL,
+    password TEXT NOT NULL,
     token_invalidator TEXT,
-    bio,
-    date_joined,
-    last_login,
-    is_active,
-    role,
-    subscription_type
+    bio TEXT,
+    date_joined DATE,
+    last_login DATE,
+    is_active BOOLEAN,
+    role VARCHAR(50),
+    subscription_type TEXT
 )""")
