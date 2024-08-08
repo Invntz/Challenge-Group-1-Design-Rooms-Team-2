@@ -1,38 +1,52 @@
-import login, signUp
+import login, add_new_user
+import os
 
 def read_file():
     try:
-        with open("menuOptions.txt") as fileRead:
+        print(f"Current working directory: {os.getcwd()}")
+        print(f"Looking for file: {os.path.abspath('menu_options1.txt')}")
+        
+        with open("menu_options1.txt") as fileRead:
             fr = fileRead.read()
+            print(fr)
         return fr  
     except FileNotFoundError as nf:
         print(f"Check {nf}")
 
+# def read_file():
+#     try:
+#         with open("menu_options1.txt") as fileRead:
+#             fr = fileRead.read()
+#             print(fr)
+#         return fr  
+#     except FileNotFoundError as nf:
+#         print(f"Check {nf}")
+
 
 def main_optionmenu():
-    Option = 0
-    OptionList = ["1","2"]
+    option = 0
+    option_list = ["1","2"]
     
-    menuChoices = read_file()
+    menu_choices = read_file()
     
-    while Option not in OptionList:
-        print(menuChoices)
+    while option not in option_list:
+        print(menu_choices)
         
-        Option = input("Enter a number from the list provided. ")
+        option = input("Enter a number from the list provided. ")
         
-        if Option not in OptionList:
-            print(f"{Option} is not a valid choice!")
-    return Option
+        if option not in option_list:
+            print(f"{option} is not a valid choice!")
+    return option
 
-mainProgram = True
-while mainProgram: #While True
-    mainMenu = main_optionmenu()#
+main_program = True
+while main_program: #While True
+    main_menu = main_optionmenu()#
     
-    match mainMenu:
+    match main_menu:
         case "1":
-            login.insert_film()
+            login.login()
         case "2":
-            signUp.delete_film()
+            add_new_user.add_new_user()
         case _:
-            mainProgram = False 
+            main_program = False 
 input("Press the 'Enter' key to exit the program: ")   
