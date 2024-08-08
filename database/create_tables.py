@@ -3,7 +3,7 @@ import db_server
 try:
     # Create the table
     db_server.data_base.execute("""
-    CREATE TABLE customers (
+    CREATE TABLE user_info (
         user_id INTEGER PRIMARY KEY AUTOINCREMENT,
         user_name TEXT NOT NULL,
         first_name TEXT NOT NULL,

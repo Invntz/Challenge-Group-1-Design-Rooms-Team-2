@@ -16,7 +16,7 @@ def add_new_user():
     new_user = new_user + [first_name, last_name, username, password, bio, role]
 
     try:
-        admin.execute("INSERT INTO customers (first_name, last_name, user_name, password, bio, role) VALUES(?,?,?,?,?,?)", new_user)
+        admin.execute("INSERT INTO user_info (first_name, last_name, user_name, password, bio, role) VALUES(?,?,?,?,?,?)", new_user)
         data_base.commit()
         print(f"\n{new_user} added to the customers table.")
 
