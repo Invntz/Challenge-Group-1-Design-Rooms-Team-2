@@ -15,15 +15,10 @@ try:
         last_login DATE,
         is_active BOOLEAN,
         role VARCHAR(50),
-        subscription_type TEXT
-    )
-    """)
+        subscription_type TEXT,
+        profile_img TEXT
+    )""")
 
-    # Add the column to the existing table
-    db_server.data_base.execute("""
-    ALTER TABLE customers
-    ADD COLUMN profile_img TEXT
-    """)
 
 except Exception as e:
     print(f"An error occurred: {e}")
