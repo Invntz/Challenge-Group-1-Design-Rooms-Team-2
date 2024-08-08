@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <img src="src/assets/girl.png" alt="Girl Image" class="big-image">
+    </div>
+    <div class="login-details">
+      <h2 style="text-align: left; padding-bottom: 10px; margin-bottom: 20px;">Sign In</h2>
+      <form>
+        <div class="input-group">
+          <label for="username" style="font-size: 14px;">Username or Email:</label>
+          <input type="text" id="username" name="username" required>
+        </div>
+        <div class="input-group">
+          <label for="password" style="font-size: 14px;">Password:</label>
+          <div class="password-input">
+            <input type="password" id="password" name="password" required>
+            <button type="button" class="toggle-password">Show</button>
+          </div>
+        </div>
+        <div style="text-align: left; margin-bottom: 10px;">
+          <a href="#" class="forgot-password">Forget your password?</a>
+        </div>
+        <button type="submit" class="signin-btn">Sign In</button>
+        <div style="text-align: center; margin-top: 10px;">
+          <p><a href="#" class="signup-link">Sign Up</a></p>
+          <p style="margin-top: 10px; margin-bottom: 10px;" padding-bottom: 5px;">or</span></p>
+          <div class="session-options">
+            <a href="#"><img src="src/assets/google.png" alt="Google"></a>
+            <a href="#"><img src="src/assets/twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="src/assets/tiktok.png" alt="TikTok"></a>
+            <a href="#"><img src="src/assets/email.png" alt="Email"></a>
+            <a href="#"><img src="src/assets/facebook.png" alt="Facebook"></a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const togglePassword = document.querySelector('.toggle-password');
+    const password = document.getElementById('password');
+
+    togglePassword.addEventListener('click', function() {
+      const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+      password.setAttribute('type', type);
+      this.textContent = type === 'password' ? 'Show' : 'Hide';
+    });
+  </script>
+</body>
+</html>
