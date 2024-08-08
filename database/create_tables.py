@@ -16,3 +16,7 @@ CREATE TABLE customers (
     subscription_type TEXT
 )""")
 
+db_server.data_base.execute("""
+ALTER TABLE customers
+ADD COLUMN profile_img TEXT
+""")
