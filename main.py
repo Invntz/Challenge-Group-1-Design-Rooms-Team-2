@@ -1,14 +1,15 @@
-from flask import Flask, render_template, send_from_directory
-import os
+from flask import Flask, jsonify
+from flask_cors import CORS
 
-server = Flask(__name__, static_folder='front-end\src\assets', template_folder='front-end')
+app = Flask(__name__)
+CORS(app)
 
-    
-@server.route("/")
-def index():
-    return render_template('/index.html')
+@app.route('/api/data', methods=['GET'])
+def get_data():
+    data = {
+        'message': 'Hello from Flask!'
+    }
+    return jsonify(data)
 
-
-
-if __name__ == "__main__":
-    server.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True)
