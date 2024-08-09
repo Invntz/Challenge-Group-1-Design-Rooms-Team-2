@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Signup.css';
 // import SignUpImg from "./signUpImg.jpg"
 
-const Signup = () => {
+const SignupForm = () => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -100,4 +100,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default SignupForm;

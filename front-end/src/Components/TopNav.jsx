@@ -24,8 +24,12 @@ const TopNav = () => {
         ☰
       </div>
       <div className="action-buttons">
+        <Link  to="/signin" >
         <button className="btn-signin">Sign In</button>
+        </Link>
+        <Link  to="/signup" >
         <button className="btn-signup">Sign Up</button>
+        </Link>
       </div>
     </header>
   );
