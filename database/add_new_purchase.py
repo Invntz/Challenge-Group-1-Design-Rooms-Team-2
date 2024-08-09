@@ -12,7 +12,7 @@ def add_purchases():
     
     for purchase in purchases:
         try:
-            admin.execute("INSERT INTO purchase ('first_name', 'last_name', 'email', 'user_name', 'password', 'bio', 'role') VALUES(?,?,?,?,?,?,?)", purchase)
+            admin.execute("INSERT INTO purchase ('purchase_id', 'user_id', 'first_name', 'last_name', 'email', 'qty_purchased', 'date_purchased', 'brand', 'basket_price') VALUES(?,?,?,?,?,?,?,?,?,?)", purchase)
             data_base.commit()
             # print(f"\n{purchases} added to the table.")
             
