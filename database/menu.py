@@ -1,5 +1,5 @@
 import login, add_new_user
-
+# Initial access screen (Alvin)
 def menu_content():
     return """
 Select Site Page.
@@ -24,7 +24,7 @@ def main_optionmenu():
 
 main_program = True
 while main_program: #While True
-    main_menu = main_optionmenu()#
+    main_menu = main_optionmenu()
     
     match main_menu:
         case "1":
@@ -35,3 +35,5 @@ while main_program: #While True
             main_program = False 
 input("Press the 'Enter' key to exit the program: ")   
 
+if __name__ == "__main__":
+    menu_content()
