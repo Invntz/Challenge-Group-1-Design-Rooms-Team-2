@@ -10,7 +10,7 @@ try:
         last_name TEXT NOT NULL,
         email TEXT NOT NULL,
         hashed_password TEXT NOT NULL,
-        salt TEXT NOT NULL,
+        salt_code TEXT NOT NULL,
         token_invalidator TEXT,
         bio TEXT,
         date_joined DATE,
