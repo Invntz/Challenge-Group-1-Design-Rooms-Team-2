@@ -1,56 +1,82 @@
-// LoginForm.jsx
+/**OGUZHAN ERDOGAN */
 import React, { useState } from 'react';
 import './styles.css';
+import girlImage from '../assets/girl.png';
+import googleIcon from '../assets/google.png';
+import twitterIcon from '../assets/twitter.png';
+import tiktokIcon from '../assets/tiktok.png';
+import emailIcon from '../assets/email.png';
+import facebookIcon from '../assets/facebook.png';
 
-function LoginForm() {
+const SignIn = () => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState('');
 
-  const togglePassword = () => {
-    setShowPassword(!showPassword);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!username || !password) {
+      setError('Username and password are required.');
+      return;
+    }
+    setError('');
+    // Handle sign in logic here
   };
 
   return (
-    <div className="container">
-      <div className="sidebar">
-        <img src="src/assets/girl.png" alt="Girl Image" className="big-image" />
+    <div className="sign-in-container">
+      <div className="image-container">
+        <img src={girlImage} alt="Stylish woman with headphones" />
       </div>
-      <div className="login-details">
-        <h2>Sign In</h2>
-        <form>
-          <div className="input-group">
-            <label htmlFor="username">Username or Email:</label>
-            <input type="text" id="username" name="username" required />
-          </div>
-          <div className="input-group">
-            <label htmlFor="password">Password:</label>
-            <div className="password-input">
-              <input type={showPassword ? 'text' : 'password'} id="password" name="password" required />
-              <button type="button" className="toggle-password" onClick={togglePassword}>
-                {showPassword ? 'Hide' : 'Show'}
+      <div className="form-container">
+        <div className="form-content">
+          <h2>Sign In</h2>
+          {error && <div className="error-message">{error}</div>}
+          <form onSubmit={handleSubmit}>
+            <div className="input-group">
+              <label htmlFor="username">Username or Email:</label>
+              <input
+                type="text"
+                id="username"
+                placeholder="Enter your username or email"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
+            </div>
+            <div className="input-group password-container">
+              <label htmlFor="password">Password:</label>
+              <input
+                type={showPassword ? "text" : "password"}
+                id="password"
+                placeholder="Enter your password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <button
+                type="button"
+                className="toggle-password"
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {showPassword ? "Hide" : "Show"}
               </button>
             </div>
+            <a href="#" className="forgot-password">Forgot your password?</a>
+            <button type="submit" className="sign-in-button">Sign In</button>
+          </form>
+          <p className="sign-up-link">Sign Up</p>
+          <p>or</p>
+          <div className="social-login">
+            <img src={googleIcon} alt="Sign in with Google" />
+            <img src={twitterIcon} alt="Sign in with Twitter" />
+            <img src={tiktokIcon} alt="Sign in with TikTok" />
+            <img src={emailIcon} alt="Sign in with Email" />
+            <img src={facebookIcon} alt="Sign in with Facebook" />
           </div>
-          <div className="forgot-password">
-            <a href="#">Forget your password?</a>
-          </div>
-          <button type="submit" className="signin-btn">Sign In</button>
-          <div className="signup-link">
-            <p><a href="#">Sign Up</a></p>
-          </div>
-          <div className="or-divider">
-            <p><span>or</span></p>
-          </div>
-          <div className="session-options">
-            <a href="#"><img src="src/assets/google.png" alt="Google" /></a>
-            <a href="#"><img src="src/assets/twitter.png" alt="Twitter" /></a>
-            <a href="#"><img src="src/assets/tiktok.png" alt="TikTok" /></a>
-            <a href="#"><img src="src/assets/email.png" alt="Email" /></a>
-            <a href="#"><img src="src/assets/facebook.png" alt="Facebook" /></a>
-          </div>
-        </form>
+        </div>
       </div>
     </div>
   );
-}
+};
 
-export default LoginForm;
+export default SignIn;
