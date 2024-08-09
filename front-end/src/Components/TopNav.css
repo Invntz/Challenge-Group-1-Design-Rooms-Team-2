@@ -4,11 +4,11 @@
     padding: 0;
     box-sizing: border-box;
 }
-  
+
 body {
     font-family: Arial, sans-serif;
 }
-  
+
 /* Header Styles */
 .topnav {
     width: 100%; /* Full width */
@@ -16,24 +16,24 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0px 20px;
-    background-color: #000000;
+
     color: white;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     z-index: 1000;
 }
-  
+
 /* Logo */
 .logo {
     display: flex;
     align-items: center;
 }
-  
+
 .logo-img {
     height: 40px;
 }
-  
+
 /* Navigation Links */
 .nav-links {
     display: flex;
@@ -43,7 +43,7 @@ body {
     padding: 0;
     margin: 0;
 }
-  
+
 .nav-item {
     color: white;
     text-decoration: none;
@@ -51,44 +51,44 @@ body {
     padding: 10px 15px;
     transition: background-color 0.3s, color 0.3s;
 }
-  
+
 .nav-item:hover,
 .nav-item:focus {
     background-color: #333333;
     color: #00B6AD;
     border-radius: 5px;
 }
-  
+
 /* Mobile Menu Toggle */
 .menu-toggle {
     display: none;
     font-size: 24px;
     cursor: pointer;
 }
-  
+
 /* Action Buttons */
 .action-buttons {
     display: flex;
     gap: 10px;
 }
-  
+
 .btn-signin, .btn-signup {
     border: none;
     padding: 10px 20px;
     cursor: pointer;
 }
-  
+
 .btn-signin {
     border: 2px solid #00B6AD;
     background: transparent;
     color: white;
 }
-  
+
 .btn-signup {
     background: linear-gradient(90deg, #BF78BA 0%, #451DE0 100%);
     color: white;
 }
-  
+
 /* Responsive Styles */
 @media (max-width: 768px) {
     .nav-links {
@@ -101,11 +101,11 @@ body {
         align-items: center;
         display: none;
     }
-  
+
     .nav-links.active {
         display: flex;
     }
-  
+
     .menu-toggle {
         display: block;
     }

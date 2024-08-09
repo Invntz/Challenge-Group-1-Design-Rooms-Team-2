@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import HomePage from './Pages';
+import Home from './Pages/home';
 import Marketplace from './Pages/marketplace';
 import Rooms from './Pages/rooms';
 // import DropPage from './Pages/DropPage';
@@ -12,7 +12,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<Home />} />
         <Route path="/marketplace" element={<Marketplace />} />
         <Route path="/rooms" element={<Rooms />} />
         {/* <Route path="/drop" element={<DropPage />} />
