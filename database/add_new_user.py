@@ -30,8 +30,9 @@ def add_users ():
     users = input("Add a list of users: ")
     
     try:
-        for user in users:
-            admin.execute("INSERT INTO user_info (first_name, last_name, email, user_name, password, bio, role) VALUES(?,?,?,?,?,?,?)", user)
+        # for user in users:
+            admin.execute("INSERT INTO user_info (first_name, last_name, email, user_name, password, bio, role) VALUES(?,?,?,?,?,?,?)", users)
+            print(users)
             data_base.commit()
             # print(f"\n{users} added to the table.")
             
