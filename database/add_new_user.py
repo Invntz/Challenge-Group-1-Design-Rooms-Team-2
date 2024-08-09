@@ -26,15 +26,14 @@ admin = db_server.admin
 #         data_base.rollback()
 #         print(f"\nRecord not added: {e}")
         
-def add_users ():
-    users = input("Add a list of users: ")
+def add_user ():
+    user = input("Add a list of users: ")
     
     try:
         # for user in users:
-            admin.execute("INSERT INTO user_info (first_name, last_name, email, user_name, password, bio, role) VALUES(?,?,?,?,?,?,?)", users)
-            print(users)
-            data_base.commit()
-            # print(f"\n{users} added to the table.")
+        admin.execute("INSERT INTO user_info (first_name, last_name, email, user_name, password, bio, role) VALUES(?,?,?,?,?,?,?)", user)
+        data_base.commit()
+        # print(f"\n{users} added to the table.")
             
 
     except db_server.sql.OperationalError as e:
@@ -43,5 +42,5 @@ def add_users ():
 
 if __name__ == "__main__":
     # add_new_user()
-    add_users()
+    add_user()
     
