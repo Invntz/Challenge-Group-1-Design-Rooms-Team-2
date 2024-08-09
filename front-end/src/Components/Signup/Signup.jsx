@@ -1,53 +1,66 @@
-import React, { useState } from 'react';
-import './Signup.css';
-// import SignUpImg from "./signUpImg.jpg"
-
+import React, { useState } from 'react'; // Importing React and the useState hook for managing state.
+import './Signup.css'; // Importing the CSS file for styling the component.
+import SignUpImg from '../../assets/signup-image.jpg'; // Importing the signup image asset.
+//Ming Chi,
+// SignupForm component definition
 const SignupForm = () => {
+  // Defining the form data state using useState hook
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
     email: '',
   });
 
+  // State for storing validation errors
   const [errors, setErrors] = useState({});
 
+  // Function to validate the form data
   const validateForm = () => {
     const newErrors = {};
+    
+    // Check if firstName is provided
     if (!formData.firstName) newErrors.firstName = 'First name is required';
+    
+    // Check if lastName is provided
     if (!formData.lastName) newErrors.lastName = 'Last name is required';
+    
+    // Check if email is provided and valid
     if (!formData.email) newErrors.email = 'Email is required';
     else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Email address is invalid';
+    
+    // Update the errors state
     setErrors(newErrors);
+    
+    // Return true if no errors, otherwise false
     return Object.keys(newErrors).length === 0;
   };
 
+  // Function to handle input field changes
   const handleChange = (e) => {
     const { name, value } = e.target;
+    // Update the form data state
     setFormData({
       ...formData,
       [name]: value,
     });
   };
 
+  // Function to handle form submission
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault(); // Prevent the default form submission behavior
+    
+    // If the form is valid, log the form data
     if (validateForm()) {
       console.log('Form submitted:', formData);
-      // Handle form submission, e.g., sending data to an API
-      
     }
   };
 
+  // JSX to render the signup form
   return (
     <div className="signup-container">
       <div className="left-side">
-        <div className="logo">Invntz</div>
-        <div className="navigation">
-          <a href="/">Our Design Room</a>
-          <a href="/">Join us today</a>
-        </div>
         <div className="image-container">
-          {/* <img src={SignUpImg} alt="Artwork" /> */}
+          <img src={SignUpImg} alt="Sign Up" /> {/* Displaying the signup image */}
         </div>
       </div>
       <div className="right-side">
@@ -62,7 +75,7 @@ const SignupForm = () => {
                 value={formData.firstName} 
                 onChange={handleChange} 
               />
-              {errors.firstName && <span className="error">{errors.firstName}</span>}
+              {errors.firstName && <span className="error">{errors.firstName}</span>} {/* Display error if any */}
             </div>
             <div className="input-field">
               <input 
@@ -72,7 +85,7 @@ const SignupForm = () => {
                 value={formData.lastName} 
                 onChange={handleChange} 
               />
-              {errors.lastName && <span className="error">{errors.lastName}</span>}
+              {errors.lastName && <span className="error">{errors.lastName}</span>} {/* Display error if any */}
             </div>
           </div>
           <div className="input-field">
@@ -83,16 +96,17 @@ const SignupForm = () => {
               value={formData.email} 
               onChange={handleChange} 
             />
-            {errors.email && <span className="error">{errors.email}</span>}
+            {errors.email && <span className="error">{errors.email}</span>} {/* Display error if any */}
           </div>
-          <button type="submit">Sign up</button>
+          <button type="submit">Sign up</button> {/* Submit button */}
           <div className="or-divider">OR</div>
           <div className="social-icons">
-            <a href="/"><img src="path-to-google-icon.png" alt="Google" /></a>
-            <a href="/"><img src="path-to-twitter-icon.png" alt="Twitter" /></a>
-            <a href="/"><img src="path-to-tiktok-icon.png" alt="TikTok" /></a>
-            <a href="/"><img src="path-to-email-icon.png" alt="Email" /></a>
-            <a href="/"><img src="path-to-facebook-icon.png" alt="Facebook" /></a>
+            {/* Links to social signup options */}
+            <a href="/"><img src="src/assets/devicon_google.png" alt="Google" /></a>
+            <a href="/"><img src="src/assets/logos_twitter.png" alt="Twitter" /></a>
+            <a href="/"><img src="src/assets/logos_tiktok-icon.png" alt="TikTok" /></a>
+            <a href="/"><img src="src/assets/mdi_email-open.png" alt="Email" /></a>
+            <a href="/"><img src="src/assets/logos_facebook.png" alt="Facebook" /></a>
           </div>
         </form>
       </div>
@@ -100,4 +114,4 @@ const SignupForm = () => {
   );
 };
 
-export default SignupForm;
+export default SignupForm; // Exporting the component to be used in other parts of the application
