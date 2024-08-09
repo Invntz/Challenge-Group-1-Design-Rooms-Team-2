@@ -1,4 +1,5 @@
 import db_server
+import ast
 
 data_base = db_server.data_base
 admin = db_server.admin
@@ -27,18 +28,19 @@ admin = db_server.admin
 #         print(f"\nRecord not added: {e}")
         
 def add_user ():
-    user = input("Add a list of users: ")
+    users = input("Add a list of users: ")
+    users = ast.literal_eval(users)    
     
-    try:
-        # for user in users:
-        admin.execute("INSERT INTO user_info (first_name, last_name, email, user_name, password, bio, role) VALUES(?,?,?,?,?,?,?)", user)
-        data_base.commit()
-        # print(f"\n{users} added to the table.")
+    for user in users:
+        try:
+            admin.execute("INSERT INTO user_info ('first_name', 'last_name', 'email', 'user_name', 'password', 'bio', 'role') VALUES(?,?,?,?,?,?,?)", user)
+            data_base.commit()
+            # print(f"\n{users} added to the table.")
             
 
-    except db_server.sql.OperationalError as e:
-        data_base.rollback()
-        print(f"\nRecord not added: {e}")
+        except db_server.sql.OperationalError as e:
+            data_base.rollback()
+            print(f"\nRecord not added: {e}")
 
 if __name__ == "__main__":
     # add_new_user()
