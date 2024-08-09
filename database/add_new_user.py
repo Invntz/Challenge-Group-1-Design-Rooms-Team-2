@@ -27,7 +27,7 @@ admin = db_server.admin
 #         print(f"\nRecord not added: {e}")
         
 def add_users ():
-    users = input("Add a list of users like [first_name, last_name, email, username, password, bio, role]")
+    users = input("Add a list of users: ")
     
     try:
         for user in users:
