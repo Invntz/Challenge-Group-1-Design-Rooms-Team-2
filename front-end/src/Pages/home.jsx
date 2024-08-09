@@ -1,3 +1,4 @@
+/* Alejandro */
 import Footer from "../Components/Footer";
 import PurpleEllipse from '../assets/purple-ellipse.png';
 import MagentaEllipse from '../assets/magenta-ellipse.png';
@@ -5,6 +6,7 @@ import HomeImg1 from '../assets/home-img-1.jpg';
 import HomeImg2 from '../assets/home-img-2.png';
 import HomeImg3 from '../assets/home-img-3.png';
 import HomeImg4 from '../assets/home-img-4.png';
+import HowItWorks from '../assets/how-it-works.png';
 import "./home.css";
 import TopNav from "../Components/TopNav";
 
@@ -27,15 +29,18 @@ function Home() {
           <img className="home-imgs home-img-3"src={HomeImg3} alt="home-img-3" />
           <img className="home-imgs home-img-4"src={HomeImg4} alt="home-img-4" />
         </div>
-        <div>
+        <div className="partner-home">
           <h3 className="partners-home-quote">The platform for the ones who believe in change</h3>
-          {/* <div className="conditions-div">
-            <h4 className="patrners-brand stella-mccartney">Stella McCartney</h4>
-            <h4 className="patrners-brand levis">Levi's</h4>
-            <h4 className="patrners-brand the-ordinary">The Ordinary</h4>
-            <h4 className="patrners-brand patagonia">Patagonia</h4>
-        </div> */}
+          <div className="container-partners">
+            <div className="container-div">
+              <h4 className="partners-brand stella-mccartney">Stella McCartney Levi's The Ordinary Patagonia</h4>
+              {/* <h4 className="patrners-brand levis">Levi's</h4>
+              <h4 className="patrners-brand the-ordinary">The Ordinary</h4>
+              <h4 className="patrners-brand patagonia">Patagonia</h4> */}
+            </div>
+          </div>
         </div>
+        <img className="how-it-works-img" src={HowItWorks} alt="how-it-works-img" />
       </div>
       <Footer />
     </>
