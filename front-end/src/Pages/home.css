@@ -1,7 +1,7 @@
 /* Alejandro */
 .home-body {
   background-color: #1F1F1F;
-  height: 150vh;
+  height: 270vh;
 }
 .home-heading-text, .home-quote, .home-bttn {
   margin: 0;
@@ -9,7 +9,7 @@
 }
 .home-heading-text {
   position: absolute;
-  top: 18%;
+  top: 22%;
   color: #fff;
   font-size: 78px;
   width: 630px;
@@ -22,7 +22,7 @@
 }
 .home-quote {
   position: absolute;
-  top: 66%;
+  top: 70%;
   text-align: left;
   color: #FFF;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -36,7 +36,7 @@
   width: 150px;
   height: 50px;
   position: absolute;
-  top: 76%;
+  top: 80%;
   border-radius: 12px;
   border: 3px solid transparent;
   background: linear-gradient(#1F1F1F, #1F1F1F) padding-box,
@@ -89,31 +89,59 @@
 }
 .home-img-1 {
   height: 262px;
-  top: 18%;
+  top: 22%;
   left: 62%;
 }
 .home-img-2 {
   height: 222px;
-  top: 53%;
+  top: 57%;
   left: 75%;
 }
 .home-img-3 {
   height: 182px;
-  top: 25%;
+  top: 29%;
   left: 75%;
 }
 .home-img-4 {
   height: 214px;
-  top: 58%;
+  top: 62%;
   left: 62%;
 }
+.partner-home {
+  color: #CFCFCF;
+  padding: 0 10%;
 
-/* .partners-home-quote {
+}
+
+.partners-home-quote {
   position: relative;
   align-items: center;
   top: 750px;
-  color: #CFCFCF;
   text-align: center;
   left: 50%;
   transform: translate(-50%, 0);
-} */
+}
+
+.partner-home .container-div {
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: Futura;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  position: absolute;
+  justify-content: space-between;
+}
+.how-it-works-img {
+  width: 1004px;
+  position: absolute;
+  top: 970px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.container-div {
+ position: absolute;
+ top: 800px;
+ left: 50%;
+ transform: translate(-50%, 0);
+}
