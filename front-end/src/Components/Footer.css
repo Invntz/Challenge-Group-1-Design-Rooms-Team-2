@@ -17,6 +17,9 @@ a {
   font-family: poppins;
   margin: 0;
 }
+.footer-elements a {
+  color: #858585;
+}
 .footer-conditions {
   display: flex;
   justify-content: end;

@@ -15,8 +15,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 20px;
-
+    padding: 0px 130px;
     color: white;
     position: absolute;
     top: 0;
@@ -55,7 +54,7 @@ body {
 .nav-item:hover,
 .nav-item:focus {
     background-color: #333333;
-    color: #00B6AD;
+    color: linear-gradient(90deg, #451DE0 0%, #BF78BA 100%);;
     border-radius: 5px;
 }
 
@@ -79,14 +78,22 @@ body {
 }
 
 .btn-signin {
-    border: 2px solid #00B6AD;
-    background: transparent;
+    border: 1px solid transparent;
+    background: linear-gradient(#1F1F1F, #1F1F1F) padding-box,
+              linear-gradient(101deg, #451DE0, #BF78BA) border-box;
     color: white;
 }
 
 .btn-signup {
-    background: linear-gradient(90deg, #BF78BA 0%, #451DE0 100%);
+    background: linear-gradient(90deg, #451DE0 0%, #BF78BA 100%);
     color: white;
+}
+.btn-signup:hover {
+  background: linear-gradient(90deg, #BF78BA 0%, #451DE0 100%);
+}
+button:focus,
+button:active {
+  outline: none;
 }
 
 /* Responsive Styles */
