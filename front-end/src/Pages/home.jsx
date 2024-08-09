@@ -28,7 +28,13 @@ function Home() {
           <img className="home-imgs home-img-4"src={HomeImg4} alt="home-img-4" />
         </div>
         <div>
-          <h3 className="">The platform for the ones who believe in change</h3>
+          <h3 className="partners-home-quote">The platform for the ones who believe in change</h3>
+          {/* <div className="conditions-div">
+            <h4 className="patrners-brand stella-mccartney">Stella McCartney</h4>
+            <h4 className="patrners-brand levis">Levi's</h4>
+            <h4 className="patrners-brand the-ordinary">The Ordinary</h4>
+            <h4 className="patrners-brand patagonia">Patagonia</h4>
+        </div> */}
         </div>
       </div>
       <Footer />
