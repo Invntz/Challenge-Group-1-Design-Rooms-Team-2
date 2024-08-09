@@ -1,49 +1,58 @@
 import db_server
 import ast
+import check_login_info
 
 data_base = db_server.data_base
 admin = db_server.admin
 
-# def add_new_user():
-#     new_user = []
-#     #user_id is autoincremented
-#     first_name = input("Enter your first name: ")
-#     last_name = input("Enter your last name: ")
-#     email = input("Enter your email address: ")
-#     username = input("Choose a unique username: ")
-#     password = input("Choose a strong password: ")
-#     bio = input ("Tell others about yourself: ")
-#     # date_joined = date_joined()
-#     role = input("Which one describes you: 'Customer','Designer' or Manufacturer'?")
-#     new_user = new_user + [first_name, last_name, email, username, password, bio, role]
+def add_new_user():
+    new_user = []
+    #user_id is autoincremented
+    first_name = input("Enter your first name: ")
+    last_name = input("Enter your last name: ")
+    email = input("Enter your email address: ")
+    username = input("Choose a unique username: ")
+    password = input("Choose a strong password: ")   
 
-#     try:
-#         admin.execute("INSERT INTO user_info (first_name, last_name, email, user_name, password, bio, role) VALUES(?,?,?,?,?,?,?)", new_user)
-#         data_base.commit()
-#         print(f"\n{new_user} added to the table.")
+#----------Hashing the Pass
+    salt_encoded, hashed_password_encoded = check_login_info.hash_password(password)
+    print (salt_encoded, hashed_password_encoded)
+
+#----------Hashing the Pass
+
+
+    bio = input ("Tell others about yourself: ")
+    # date_joined = date_joined()
+    role = input("Which one describes you: 'Customer','Designer' or Manufacturer'?")
+    new_user = new_user + [first_name, last_name, email, username, password, bio, role]
+
+    try:
+        admin.execute("INSERT INTO user_info (first_name, last_name, email, user_name, password, bio, role) VALUES(?,?,?,?,?,?,?)", new_user)
+        data_base.commit()
+        print(f"\n{new_user} added to the table.")
         
 
-#     except db_server.sql.OperationalError as e:
-#         data_base.rollback()
-#         print(f"\nRecord not added: {e}")
+    except db_server.sql.OperationalError as e:
+        data_base.rollback()
+        print(f"\nRecord not added: {e}")
         
-def add_user ():
-    users = input("Add a list of users: ")
-    users = ast.literal_eval(users)    
+# def add_user ():
+#     users = input("Add a list of users: ")
+#     users = ast.literal_eval(users)    
     
-    for user in users:
-        try:
-            admin.execute("INSERT INTO user_info ('first_name', 'last_name', 'email', 'user_name', 'password', 'bio', 'role') VALUES(?,?,?,?,?,?,?)", user)
-            data_base.commit()
-            # print(f"\n{users} added to the table.")
+#     for user in users:
+#         try:
+#             admin.execute("INSERT INTO user_info ('first_name', 'last_name', 'email', 'user_name', 'password', 'bio', 'role') VALUES(?,?,?,?,?,?,?)", user)
+#             data_base.commit()
+#             # print(f"\n{users} added to the table.")
             
 
-        except db_server.sql.OperationalError as e:
-            data_base.rollback()
-            print(f"\nRecord not added: {e}")
+#         except db_server.sql.OperationalError as e:
+#             data_base.rollback()
+#             print(f"\nRecord not added: {e}")
 
 if __name__ == "__main__":
-    # add_new_user()
-    add_user()
+    add_new_user()
+    # add_user()
 
 
