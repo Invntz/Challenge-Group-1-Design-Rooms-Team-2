@@ -1,6 +1,7 @@
 import React, { useState } from 'react'; // Importing React and the useState hook for managing state.
 import './Signup.css'; // Importing the CSS file for styling the component.
 import SignUpImg from '../../assets/signup-image.jpg'; // Importing the signup image asset.
+import { Link } from 'react-router-dom';
 //Ming Chi,
 // SignupForm component definition
 const SignupForm = () => {
@@ -98,7 +99,8 @@ const SignupForm = () => {
             />
             {errors.email && <span className="error">{errors.email}</span>} {/* Display error if any */}
           </div>
-          <button type="submit">Sign up</button> {/* Submit button */}
+          <Link to="/marketplace">
+          <button type="submit">Sign up</button> </Link> {/* Submit button */}
           <div className="or-divider">OR</div>
           <div className="social-icons">
             {/* Links to social signup options */}
